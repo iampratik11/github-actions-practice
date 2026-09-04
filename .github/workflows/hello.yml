@@ -1,11 +1,20 @@
-name: My First Action
+name: Run Commands
 
 on: [push]
 
 jobs:
-  hello:
+  commands:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello GitHub Actions!"
+      - name: Show message
+        run: echo "Hello!"
+
+      - name: Show directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Show OS
+        run: uname -a
