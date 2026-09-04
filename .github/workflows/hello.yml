@@ -1,20 +1,17 @@
-name: Run Commands
+name: Checkout Practice
 
 on: [push]
 
 jobs:
-  commands:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show message
-        run: echo "Hello!"
-
-      - name: Show directory
-        run: pwd
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: List files
         run: ls -la
 
-      - name: Show OS
-        run: uname -a
+      - name: Read file
+        run: cat hello.txt
