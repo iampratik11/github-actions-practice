@@ -1,17 +1,15 @@
-name: Checkout Practice
+name: Hello World
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  my_job:
+    name: Hello World
+    runs-on: ubuntu-22.04
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: List files
-        run: ls -la
-
-      - name: Read file
-        run: cat hello.txt
+      - name: Hello World
+        run: echo "Hello World"
