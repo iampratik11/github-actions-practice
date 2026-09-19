@@ -1,15 +1,25 @@
-name: Hello World
+name: Deploying the application using echo statement for understanding the rolling update
 
-on:
+on:  
   push:
     branches:
       - main
 
 jobs:
-  my_job:
-    name: Hello World
-    runs-on: ubuntu-22.04
+  deploy_1:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        rolling:
+          - deploy1
+          - deploy2
+          - deploy3
+          - deploy4
+          - deploy5
+          - deploy6
 
     steps:
-      - name: Hello World
-        run: echo "Hello World"
+      - name: Deploying the application
+        run: echo "Deploying the application on ${{ matrix.rolling }}"
+        
